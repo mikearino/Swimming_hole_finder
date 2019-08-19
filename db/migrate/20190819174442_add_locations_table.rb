@@ -4,6 +4,7 @@ class AddLocationsTable < ActiveRecord::Migration[5.2]
       t.column :name, :string
       t.column :place, :string
       t.column :content, :string
+      t.timestamps()
     end
   end
 end

@@ -16,7 +16,7 @@ class Seed
     20.times do |i|
       location = Location.create!(
         name: Faker::Address.community,
-        place: Faker::Address.street_address,
+        place: Faker::Address.state,
         content: Faker::Hipster.sentence
       )
       puts "Location #{i}: name is #{location.name} and content is '#{location.content}'"
