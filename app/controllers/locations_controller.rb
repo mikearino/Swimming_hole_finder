@@ -28,6 +28,11 @@ class LocationsController < ApplicationController
   def destroy
     @location = Location.find(params[:id])
     @location.destroy
+    if @location.destroy!
+      render status: 200, json: {
+        message: "This location has been destroyed successfully."
+      }
+    end
   end
 
   def location_params

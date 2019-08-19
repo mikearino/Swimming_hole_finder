@@ -29,7 +29,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'pry'
   gem 'factory_bot'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
