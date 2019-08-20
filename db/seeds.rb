@@ -12,7 +12,7 @@ class Seed
         place: Faker::Address.state,
         content: Faker::Hipster.sentence
       )
-      7.times do |i|
+      rand(1..10).times do |i|
         reviews = location.reviews.create!(
           author: Faker::Name.name,
           content_body: Faker::Quote.famous_last_words,
