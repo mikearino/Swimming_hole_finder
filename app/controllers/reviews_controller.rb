@@ -1,15 +1,22 @@
 class ReviewsController < ApplicationController
 
+
   def new
     @location = Location.find(params[:location_id])
     @review = @location.reviews.new
-    json_response(@location, @review)
+    json_response(@review)
   end
 
   def create
     @location = Location.find(params[:location_id])
-    @review = Review.create!(review_params)
-    json_response(@location, @review, :created)
+    @review = @location.reviews.create!(review_params)
+    json_response(@review, :created)
+  end
+
+  def show
+    @location = Location.find(params[:location_id])
+    @review = @location.reviews.find(params[:id])
+    json_response(@review)
   end
 
   private
