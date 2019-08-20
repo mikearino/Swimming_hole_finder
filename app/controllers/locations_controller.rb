@@ -2,9 +2,8 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
-    # name = params[:name]
-    # # binding.pry
-    # @locations = Location.search()
+    place = params[:place]
+    @locations = Location.search(place)
     json_response(@locations)
   end
 
@@ -38,6 +37,17 @@ class LocationsController < ApplicationController
     end
   end
 
+  def rando
+    @location = Location.random
+    json_response(@location)
+  end
+
+  def most_popular
+    @location = Location.most_popular
+    json_response(@location)
+  end
+
+private
   def location_params
     params.permit(:name, :place, :content)
   end
